@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi App sobre Genshin</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<div class="contenedor-app">
+  <header class="mi-header">
+    <h1>Enviar Reporte</h1>
+     <!-- El botón del menú hamburguesa -->
+    <button id="boton-menu" class="btn-menu">☰</button>
+  </div>
+  
+  <!-- Los enlaces de navegación que inicialmente estarán ocultos -->
+  <nav id="navegacion" class="menu-oculto">
+    <a href="index.html">✨ Inicio</a>
+    <a href="#galeria">🖼️ Galería</a>
+    <a href="contacto.html">🌠​ Datos curiosos</a>
+  </nav>
+</header>
+  
+  <main class="contenido">
+    <form id="formulario-contacto">
+      <label>Tu Nombre:</label>
+      <input type="email" id="campo-email" placeholder="Ej: abc@gmail.com" required>
+      
+      <label>¿Cuál es tu personaje fav?:</label>
+      <textarea id="campo-mensaje" placeholder="Escribe aquí tu personaje favorito" required></textarea>
+      
+      <button type="submit" class="boton-app">ENVIAR AHORA</button>
+    </form>
+  </main>
+</div>
+
+<script src="script.js"></script>
