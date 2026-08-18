@@ -1,6 +1,6 @@
 /* Configuración de la pantalla del celular */
 .contenedor-app {
-    background-color: #103783;
+    background-color: #6674A3;
     height: 100vh;
     font-family: 'Segoe UI', sans-serif;
     display: flex;
@@ -8,7 +8,7 @@
 }
 
 .mi-header {
-    background-color: #e4ede6; /* Verde institucional */
+    background-color: #12142D; /* Verde institucional */
     color: white;
     text-align: center;
     padding: 15px;
