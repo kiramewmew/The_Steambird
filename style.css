@@ -18,7 +18,7 @@
 .contenido {
     padding: 20px;
     text-align: center;
-    color: #9bafd9;
+    color: #12142D;
 }
 
 /* Sistema de rejilla para las tarjetas */
@@ -27,7 +27,7 @@
     grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
     gap: 15px;
     margin-top: 20px;
-    color:#000000;
+    color:#12142D;
 }
 
 /* Diseño de cada tarjeta individual */
@@ -38,7 +38,7 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
-    color:#070000
+    color:#12142D;
 }
 
 /* Efecto al tocar la tarjeta (para que se sienta real) */
