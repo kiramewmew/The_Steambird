@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Circuitos F1 2026</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Adaptación mínima del style.css original para la galería de circuitos -->
+    <style>
+        .contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .grid-servicios {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card {
+            overflow: hidden;
+        }
+
+        .card .img-proyecto {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            margin: 12px 0 5px;
+            font-size: 21px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .ronda {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4f4d7a;
+        }
+
+        .pais {
+            font-weight: bold;
+        }
+
+        .sprint {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background: #12142D;
+            color: white;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .grid-servicios {
+                grid-template-columns: 1fr;
+            }
+
+            .contenido {
+                padding: 15px;
+            }
+
+            .card .img-proyecto {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body class="contenedor-app">
+
+    <header class="mi-header">
+        <div class="barra-superior">
+            <h1>🏁 Circuitos F1 2026</h1>
+
+            <button class="btn-menu" onclick="mostrarMenu()" aria-label="Abrir menú">
+                ☰
+            </button>
+        </div>
+
+        <nav id="navegacion" class="menu-oculto">
+            <a href="#circuitos">Circuitos</a>
+            <a href="#calendario">Calendario</a>
+            <a href="#info">Información</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+
+        <section id="info">
+            <h2>Galería de circuitos de Fórmula 1</h2>
+            <p>
+                Temporada 2026 · 24 Grandes Premios · 21 países
+            </p>
+        </section>
+
+        <section id="circuitos" class="grid-servicios">
+
+            <article class="card">
+                <img class="img-proyecto" src="melbourne.jpg" alt="Circuito de Melbourne">
+                <span class="ronda">Ronda 1</span>
+                <h2>Albert Park Circuit</h2>
+                <p class="pais">🇦🇺 Australia · Melbourne</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="shanghai.jpg" alt="Circuito Internacional de Shanghai">
+                <span class="ronda">Ronda 2</span>
+                <h2>Shanghai International Circuit</h2>
+                <p class="pais">🇨🇳 China · Shanghai</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="suzuka.jpg" alt="Circuito de Suzuka">
+                <span class="ronda">Ronda 3</span>
+                <h2>Suzuka Circuit</h2>
+                <p class="pais">🇯🇵 Japón · Suzuka</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="bahrain.jpg" alt="Circuito Internacional de Bahrain">
+                <span class="ronda">Ronda 4</span>
+                <h2>Bahrain International Circuit</h2>
+                <p class="pais">🇧🇭 Baréin · Sakhir</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="jeddah.jpg" alt="Jeddah Corniche Circuit">
+                <span class="ronda">Ronda 5</span>
+                <h2>Jeddah Corniche Circuit</h2>
+                <p class="pais">🇸🇦 Arabia Saudita · Jeddah</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="miami.jpg" alt="Miami International Autodrome">
+                <span class="ronda">Ronda 6</span>
+                <h2>Miami International Autodrome</h2>
+                <p class="pais">🇺🇸 Estados Unidos · Miami</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="montreal.jpg" alt="Circuit Gilles-Villeneuve">
+                <span class="ronda">Ronda 7</span>
+                <h2>Circuit Gilles-Villeneuve</h2>
+                <p class="pais">🇨🇦 Canadá · Montreal</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="monaco.jpg" alt="Circuito de Mónaco">
+                <span class="ronda">Ronda 8</span>
+                <h2>Circuit de Monaco</h2>
+                <p class="pais">🇲🇨 Mónaco · Mónaco</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="barcelona.jpg" alt="Circuit de Barcelona-Catalunya">
+                <span class="ronda">Ronda 9</span>
+                <h2>Circuit de Barcelona-Catalunya</h2>
+                <p class="pais">🇪🇸 España · Barcelona</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="spielberg.jpg" alt="Red Bull Ring">
+                <span class="ronda">Ronda 10</span>
+                <h2>Red Bull Ring</h2>
+                <p class="pais">🇦🇹 Austria · Spielberg</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="silverstone.jpg" alt="Silverstone Circuit">
+                <span class="ronda">Ronda 11</span>
+                <h2>Silverstone Circuit</h2>
+                <p class="pais">🇬🇧 Gran Bretaña · Silverstone</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="spa.jpg" alt="Circuit de Spa-Francorchamps">
+                <span class="ronda">Ronda 12</span>
+                <h2>Circuit de Spa-Francorchamps</h2>
+                <p class="pais">🇧🇪 Bélgica · Spa</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="hungaroring.jpg" alt="Hungaroring">
+                <span class="ronda">Ronda 13</span>
+                <h2>Hungaroring</h2>
+                <p class="pais">🇭🇺 Hungría · Budapest</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="zandvoort.jpg" alt="Circuit Zandvoort">
+                <span class="ronda">Ronda 14</span>
+                <h2>Circuit Zandvoort</h2>
+                <p class="pais">🇳🇱 Países Bajos · Zandvoort</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="monza.jpg" alt="Autodromo Nazionale Monza">
+                <span class="ronda">Ronda 15</span>
+                <h2>Autodromo Nazionale Monza</h2>
+                <p class="pais">🇮🇹 Italia · Monza</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="madrid.jpg" alt="Madring">
+                <span class="ronda">Ronda 16</span>
+                <h2>Madring</h2>
+                <p class="pais">🇪🇸 España · Madrid</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="baku.jpg" alt="Baku City Circuit">
+                <span class="ronda">Ronda 17</span>
+                <h2>Baku City Circuit</h2>
+                <p class="pais">🇦🇿 Azerbaiyán · Bakú</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="singapur.jpg" alt="Marina Bay Street Circuit">
+                <span class="ronda">Ronda 18</span>
+                <h2>Marina Bay Street Circuit</h2>
+                <p class="pais">🇸🇬 Singapur · Singapur</p>
+                <span class="sprint">SPRINT</span>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="austin.jpg" alt="Circuit of the Americas">
+                <span class="ronda">Ronda 19</span>
+                <h2>Circuit of the Americas</h2>
+                <p class="pais">🇺🇸 Estados Unidos · Austin</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="mexico.jpg" alt="Autódromo Hermanos Rodríguez">
+                <span class="ronda">Ronda 20</span>
+                <h2>Autódromo Hermanos Rodríguez</h2>
+                <p class="pais">🇲🇽 México · Ciudad de México</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="interlagos.jpg" alt="Autódromo José Carlos Pace">
+                <span class="ronda">Ronda 21</span>
+                <h2>Autódromo José Carlos Pace</h2>
+                <p class="pais">🇧🇷 Brasil · São Paulo</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="lasvegas.jpg" alt="Las Vegas Strip Circuit">
+                <span class="ronda">Ronda 22</span>
+                <h2>Las Vegas Strip Circuit</h2>
+                <p class="pais">🇺🇸 Estados Unidos · Las Vegas</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="lusail.jpg" alt="Lusail International Circuit">
+                <span class="ronda">Ronda 23</span>
+                <h2>Lusail International Circuit</h2>
+                <p class="pais">🇶🇦 Qatar · Lusail</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="yasmarina.jpg" alt="Yas Marina Circuit">
+                <span class="ronda">Ronda 24</span>
+                <h2>Yas Marina Circuit</h2>
+                <p class="pais">🇦🇪 Abu Dhabi · Yas Marina</p>
+            </article>
+
+        </section>
+
+        <section id="calendario" class="contenido">
+            <h2>Calendario 2026</h2>
+            <p>
+                Australia · China · Japón · Baréin · Arabia Saudita · Miami ·
+                Canadá · Mónaco · Barcelona · Austria · Gran Bretaña · Bélgica ·
+                Hungría · Países Bajos · Italia · Madrid · Azerbaiyán · Singapur ·
+                Austin · México · Brasil · Las Vegas · Qatar · Abu Dhabi
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        function mostrarMenu() {
+            const menu = document.getElementById("navegacion");
+            menu.classList.toggle("menu-oculto");
+        }
+    </script>
+
+</body>
+</html>
