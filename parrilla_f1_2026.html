@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrilla F1 2026</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ajustes mínimos para adaptar el style.css entregado a una parrilla de pilotos -->
+    <style>
+        .contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .grid-servicios {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card {
+            overflow: hidden;
+        }
+
+        .card .img-proyecto {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            margin: 12px 0 5px;
+            font-size: 22px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .numero {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4f4d7a;
+        }
+
+        .equipo {
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .grid-servicios {
+                grid-template-columns: 1fr;
+            }
+
+            .contenido {
+                padding: 15px;
+            }
+
+            .card .img-proyecto {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body class="contenedor-app">
+
+    <header class="mi-header">
+        <div class="barra-superior">
+            <h1>🏎️ Parrilla F1 2026</h1>
+
+            <button class="btn-menu" onclick="mostrarMenu()" aria-label="Abrir menú">
+                ☰
+            </button>
+        </div>
+
+        <nav id="navegacion" class="menu-oculto">
+            <a href="#pilotos">Pilotos</a>
+            <a href="#equipos">Equipos</a>
+            <a href="#info">Información</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+
+        <section id="info">
+            <h2>Parrilla actual de Fórmula 1</h2>
+            <p>
+                Temporada 2026 · 11 equipos · 22 pilotos
+            </p>
+        </section>
+
+        <section id="pilotos" class="grid-servicios">
+
+            <!-- Mercedes -->
+            <article class="card">
+                <img class="img-proyecto" src="russell.jpg" alt="George Russell">
+                <span class="numero">#63</span>
+                <h2>George Russell</h2>
+                <p class="equipo">Mercedes</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="antonelli.jpg" alt="Kimi Antonelli">
+                <span class="numero">#12</span>
+                <h2>Kimi Antonelli</h2>
+                <p class="equipo">Mercedes</p>
+            </article>
+
+            <!-- Ferrari -->
+            <article class="card">
+                <img class="img-proyecto" src="leclerc.jpg" alt="Charles Leclerc">
+                <span class="numero">#16</span>
+                <h2>Charles Leclerc</h2>
+                <p class="equipo">Ferrari</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="hamilton.jpg" alt="Lewis Hamilton">
+                <span class="numero">#44</span>
+                <h2>Lewis Hamilton</h2>
+                <p class="equipo">Ferrari</p>
+            </article>
+
+            <!-- McLaren -->
+            <article class="card">
+                <img class="img-proyecto" src="norris.jpg" alt="Lando Norris">
+                <span class="numero">#1</span>
+                <h2>Lando Norris</h2>
+                <p class="equipo">McLaren</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="piastri.jpg" alt="Oscar Piastri">
+                <span class="numero">#81</span>
+                <h2>Oscar Piastri</h2>
+                <p class="equipo">McLaren</p>
+            </article>
+
+            <!-- Red Bull Racing -->
+            <article class="card">
+                <img class="img-proyecto" src="verstappen.jpg" alt="Max Verstappen">
+                <span class="numero">#3</span>
+                <h2>Max Verstappen</h2>
+                <p class="equipo">Red Bull Racing</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="hadjar.jpg" alt="Isack Hadjar">
+                <span class="numero">#6</span>
+                <h2>Isack Hadjar</h2>
+                <p class="equipo">Red Bull Racing</p>
+            </article>
+
+            <!-- Racing Bulls -->
+            <article class="card">
+                <img class="img-proyecto" src="lawson.jpg" alt="Liam Lawson">
+                <span class="numero">#30</span>
+                <h2>Liam Lawson</h2>
+                <p class="equipo">Racing Bulls</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="lindblad.jpg" alt="Arvid Lindblad">
+                <span class="numero">#41</span>
+                <h2>Arvid Lindblad</h2>
+                <p class="equipo">Racing Bulls</p>
+            </article>
+
+            <!-- Alpine -->
+            <article class="card">
+                <img class="img-proyecto" src="gasly.jpg" alt="Pierre Gasly">
+                <span class="numero">#10</span>
+                <h2>Pierre Gasly</h2>
+                <p class="equipo">Alpine</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="colapinto.jpg" alt="Franco Colapinto">
+                <span class="numero">#43</span>
+                <h2>Franco Colapinto</h2>
+                <p class="equipo">Alpine</p>
+            </article>
+
+            <!-- Haas -->
+            <article class="card">
+                <img class="img-proyecto" src="ocon.jpg" alt="Esteban Ocon">
+                <span class="numero">#31</span>
+                <h2>Esteban Ocon</h2>
+                <p class="equipo">Haas F1 Team</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="bearman.jpg" alt="Oliver Bearman">
+                <span class="numero">#87</span>
+                <h2>Oliver Bearman</h2>
+                <p class="equipo">Haas F1 Team</p>
+            </article>
+
+            <!-- Audi -->
+            <article class="card">
+                <img class="img-proyecto" src="hulkenberg.jpg" alt="Nico Hulkenberg">
+                <span class="numero">#27</span>
+                <h2>Nico Hulkenberg</h2>
+                <p class="equipo">Audi</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="bortoleto.jpg" alt="Gabriel Bortoleto">
+                <span class="numero">#5</span>
+                <h2>Gabriel Bortoleto</h2>
+                <p class="equipo">Audi</p>
+            </article>
+
+            <!-- Williams -->
+            <article class="card">
+                <img class="img-proyecto" src="sainz.jpg" alt="Carlos Sainz">
+                <span class="numero">#55</span>
+                <h2>Carlos Sainz</h2>
+                <p class="equipo">Williams</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="albon.jpg" alt="Alexander Albon">
+                <span class="numero">#23</span>
+                <h2>Alexander Albon</h2>
+                <p class="equipo">Williams</p>
+            </article>
+
+            <!-- Aston Martin -->
+            <article class="card">
+                <img class="img-proyecto" src="alonso.jpg" alt="Fernando Alonso">
+                <span class="numero">#14</span>
+                <h2>Fernando Alonso</h2>
+                <p class="equipo">Aston Martin</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="stroll.jpg" alt="Lance Stroll">
+                <span class="numero">#18</span>
+                <h2>Lance Stroll</h2>
+                <p class="equipo">Aston Martin</p>
+            </article>
+
+            <!-- Cadillac -->
+            <article class="card">
+                <img class="img-proyecto" src="perez.jpg" alt="Sergio Perez">
+                <span class="numero">#11</span>
+                <h2>Sergio Perez</h2>
+                <p class="equipo">Cadillac</p>
+            </article>
+
+            <article class="card">
+                <img class="img-proyecto" src="bottas.jpg" alt="Valtteri Bottas">
+                <span class="numero">#77</span>
+                <h2>Valtteri Bottas</h2>
+                <p class="equipo">Cadillac</p>
+            </article>
+
+        </section>
+
+        <section id="equipos" class="contenido">
+            <h2>Equipos de la temporada 2026</h2>
+            <p>
+                Mercedes · Ferrari · McLaren · Red Bull Racing · Racing Bulls ·
+                Alpine · Haas · Audi · Williams · Aston Martin · Cadillac
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        function mostrarMenu() {
+            const menu = document.getElementById("navegacion");
+            menu.classList.toggle("menu-oculto");
+        }
+    </script>
+
+</body>
+</html>
