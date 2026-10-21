@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Driving to F1 | Max Verstappen</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/jpeg" href="imagenes2/bl.jpg">
+<style>
+:root{--rojo:#e10600;--azul:#3671c6;--fondo:#6674A3;--osc:#12142D;--panel:#312f5c;--linea:#4f4d7a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:#f4f4f5;font-family:'Segoe UI',sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+
+/* Header y menú hamburguesa (igual que el index) */
+.mi-header{background-color:var(--osc);color:#fff;text-align:center;padding:15px;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.barra-superior{display:flex;justify-content:space-between;align-items:center}
+.barra-superior h1{margin:.3em 0;font-size:2em}
+.btn-menu{background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+#navegacion{display:flex;flex-direction:column;background-color:var(--panel);transition:all .3s ease}
+.menu-oculto{display:none!important}
+#navegacion a{color:#fff;padding:15px;text-decoration:none;border-top:1px solid var(--linea);font-size:16px;transition:.3s}
+#navegacion a:hover{background-color:#8e8cbf;padding-left:35px}
+#navegacion a[aria-current="page"]{background-color:var(--linea)}
+#navegacion a.enlace-seccion{font-size:14px;background-color:rgba(0,0,0,.15)}
+#navegacion a.enlace-seccion:hover{background-color:#8e8cbf}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(90deg,rgba(10,10,12,.72),rgba(10,10,12,.34)),linear-gradient(135deg,var(--panel),var(--osc));border-block:1px solid var(--linea)}
+.hero:after{content:"3";position:absolute;z-index:-1;right:4%;bottom:-.25em;font-size:clamp(11rem,32vw,26rem);font-weight:900;font-style:italic;color:rgba(54,113,198,.28);line-height:1}
+.hero-inner{padding:clamp(48px,9vw,110px) 0;max-width:720px}
+.eyebrow{color:var(--osc);text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;font-weight:900}
+.hero .eyebrow,#quiz .eyebrow{color:#ff7772}
+.hero h2{font-size:clamp(3rem,8vw,6.7rem);font-weight:800;line-height:.92;text-transform:uppercase;letter-spacing:-.025em;margin:14px 0 20px}
+.hero h2 span{color:var(--rojo)}
+.hero p{max-width:570px;color:#eceaf9;font-size:clamp(1rem,2vw,1.15rem)}
+.btn{border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-red{background:var(--rojo);color:#fff}
+.btn-ghost{border:1px solid #b9b7e6;color:#fff;background:var(--panel)}
+.hero .btn{margin-top:20px}
+
+/* Secciones y paneles */
+.section{padding:clamp(36px,6vw,70px) 0}
+.section h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:800;text-transform:uppercase;line-height:1;margin:8px 0}
+.muted{color:#f4f4fb}
+.panel{background:var(--panel);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.card-body{padding:clamp(16px,3vw,26px)}
+.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#ffaaa6;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.stat{padding:22px 16px;text-align:center;border-top:4px solid var(--azul)}
+.stat strong{display:block;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;line-height:1}
+.stat span{font-size:.85rem;color:#d9d8f2;text-transform:uppercase;letter-spacing:.08em}
+.small-note{font-size:.82rem;color:#f4f4fb}
+.dos{display:grid;grid-template-columns:1fr 1.4fr;gap:18px;align-items:start}
+.ficha{margin:14px 0 0;display:grid;gap:12px}
+.ficha dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#d9d8f2}
+.ficha dd{margin:0;font-weight:700}
+
+/* Línea de tiempo interactiva */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{border:1px solid #6d6aa3;background:transparent;color:#fff;border-radius:99px;padding:7px 14px;font:inherit;font-weight:700;cursor:pointer}
+.chip:hover{border-color:var(--rojo)}
+.chip.on{background:var(--rojo);border-color:var(--rojo)}
+.detalle{background:var(--osc);border-radius:12px;padding:18px;min-height:150px}
+.detalle h3{margin:6px 0 8px;font-size:1.3rem}
+.detalle p{margin:0;color:#eceaf9}
+
+/* Foto */
+.foto{margin:0;border-bottom:4px solid var(--azul);background:var(--osc)}
+.foto img{display:block;width:100%;aspect-ratio:4/5;max-height:460px;object-fit:cover;object-position:center top}
+.foto-vacia{aspect-ratio:4/5;max-height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;color:#d9d8f2;font-weight:700;border:2px dashed var(--linea);margin:12px;border-radius:10px}
+.foto-vacia[hidden]{display:none}
+.foto-vacia span{font-size:2.5rem}
+.foto-vacia small{font-weight:400;font-size:.78rem}
+
+/* Quiz */
+#quiz{background:var(--osc)}
+.quiz{max-width:720px}
+.progress{height:8px;background:var(--linea);border-radius:99px;overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;width:0;background:var(--rojo);transition:width .25s}
+.question{font-size:1.25rem;font-weight:800;margin:18px 0}
+.answers{display:grid;gap:10px}
+.answer{width:100%;text-align:left;border:1px solid #6d6aa3;border-radius:9px;padding:12px 14px;color:#f5f5f5;background:var(--panel);cursor:pointer;font:inherit}
+.answer:hover:not(:disabled){border-color:var(--rojo)}
+.answer:disabled{cursor:default}
+.answer.correct{border-color:#28a56a;background:#123d2b}
+.answer.wrong{border-color:var(--rojo);background:#471a1a}
+.feedback{min-height:28px;margin:14px 0;font-weight:700}
+.hidden{display:none!important}
+.footer{background:var(--osc);border-top:1px solid var(--linea);padding:24px 0;color:#d9d8f2;font-size:.85rem}
+
+@media(max-width:760px){
+.dos{grid-template-columns:1fr}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="mi-header">
+<div class="barra-superior">
+<h1>Driving to F1</h1>
+<button id="boton-menu" class="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">☰</button>
+</div>
+<nav id="navegacion" class="menu-oculto">
+<a href="index.html">🏠 Volver al inicio</a>
+<a href="driving_to_f1_interactiva_actualizada.html">✨ Interactivo</a>
+<a href="galeria_circuitos_f1_2026.html">🖼️ Los circuitos</a>
+<a href="parrilla_f1_2026.html">🌠 Un poco más de la parrilla</a>
+<a href="#inicio" aria-current="page">🏆 Max Verstappen</a>
+<a href="#carrera" class="enlace-seccion">↳ Su carrera</a>
+<a href="#quiz" class="enlace-seccion">↳ Quiz de Max</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="wrap hero-inner">
+<div class="eyebrow">Red Bull Racing · Países Bajos</div>
+<h2>Max<br><span>Verstappen</span></h2>
+<p>Piloto neerlandés y cuatro veces campeón del mundo de Fórmula 1 con Red Bull Racing.</p>
+<a class="btn btn-red" href="#carrera">Ver su carrera ↓</a>
+</div>
+</section>
+
+<section class="section wrap" aria-label="Cifras de su carrera">
+<div class="stats">
+<div class="panel stat"><strong data-n="4">4</strong><span>Títulos</span></div>
+<div class="panel stat"><strong data-n="73">73</strong><span>Victorias</span></div>
+<div class="panel stat"><strong data-n="50">50</strong><span>Poles</span></div>
+<div class="panel stat"><strong data-n="136">136</strong><span>Podios</span></div>
+</div>
+<p class="small-note">Cifras tras el GP de Singapur 2026; cambian durante la temporada.</p>
+</section>
+
+<section class="section wrap" id="carrera" style="padding-top:0">
+<div class="eyebrow">Perfil y trayectoria</div>
+<h2>De Hasselt a la gloria</h2>
+<p class="muted">Elige un año para repasar los momentos clave.</p>
+<div class="dos">
+<div class="panel">
+<figure class="foto">
+<img src="imagenes2/max_verstappen.jpg" alt="Max Verstappen" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+<div class="foto-vacia" hidden><span>📷</span>Aquí va la foto de Max<small>Guárdala como imagenes2/max_verstappen.jpg</small></div>
+</figure>
+<div class="card-body">
+<div class="tag">Ficha del piloto</div>
+<dl class="ficha">
+<div><dt>Nombre completo</dt><dd>Max Emilian Verstappen</dd></div>
+<div><dt>Nacimiento</dt><dd>30 de septiembre de 1997, Hasselt (Bélgica)</dd></div>
+<div><dt>Nacionalidad</dt><dd>Países Bajos</dd></div>
+<div><dt>Número en 2026</dt><dd>3 (antes 33 y 1)</dd></div>
+<div><dt>Padre</dt><dd>Jos Verstappen, también piloto de F1</dd></div>
+<div><dt>Contrato</dt><dd>Con Red Bull al menos hasta 2030</dd></div>
+</dl>
+</div></div>
+<div class="panel"><div class="card-body">
+<div class="tag">Línea de tiempo</div>
+<div class="chips" id="chips" role="tablist" aria-label="Años de su carrera"></div>
+<div class="detalle" id="detalle" aria-live="polite"></div>
+</div></div>
+</div>
+</section>
+
+<section class="section" id="quiz">
+<div class="wrap quiz">
+<div class="eyebrow">¿Cuánto sabes de Max?</div>
+<h2>Quiz de Verstappen</h2>
+<div class="panel"><div class="card-body">
+<div class="tag" id="qCount">PREGUNTA 1 DE 5</div>
+<div class="progress"><span id="progressBar"></span></div>
+<div class="question" id="question"></div>
+<div class="answers" id="answers"></div>
+<div class="feedback" id="feedback" aria-live="polite"></div>
+<button class="btn btn-red hidden" id="nextBtn">Siguiente →</button>
+<p class="small-note" id="scoreText">Puntos: 0</p>
+</div></div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<strong>DRIVING TO F1</strong> · Datos de Wikipedia y Motorsport Magazine
+</div>
+</footer>
+
+<script>
+const menuBtn=document.getElementById('boton-menu'),nav=document.getElementById('navegacion');
+const setMenu=open=>{nav.classList.toggle('menu-oculto',!open);menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰'};
+menuBtn.addEventListener('click',()=>setMenu(nav.classList.contains('menu-oculto')));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+// Contadores
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const counters=document.querySelectorAll('[data-n]');
+function countUp(el){const n=+el.dataset.n,t0=performance.now();const step=t=>{const p=Math.min((t-t0)/900,1);el.textContent=Math.round(n*p);if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+if(!reduce&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);io.unobserve(e.target)}}));counters.forEach(c=>{c.textContent='0';io.observe(c)})}
+
+// Línea de tiempo
+const years=[
+['2015','Debut en la F1','Debuta con Toro Rosso con solo 17 años, el piloto más joven en estrenarse en la historia de la F1.'],
+['2016','Primera victoria','Es ascendido a Red Bull Racing en plena temporada y gana el GP de España a los 18 años, el ganador más joven de la historia.'],
+['2021','Primer título','Se corona campeón por primera vez, en un duelo con Lewis Hamilton que se decide en la última vuelta del GP de Abu Dhabi. Suma 10 victorias.'],
+['2022','Bicampeón','Segundo título consecutivo, con 15 victorias en la temporada.'],
+['2023','Año de dominio','Tercer título, con 19 victorias en 22 carreras.'],
+['2024','Tetracampeón','Cuarto título seguido con Red Bull, con 9 victorias.'],
+['2025','Subcampeón','Pierde el título frente a Lando Norris pese a ganar 8 carreras con un coche que a menudo fue superado por el McLaren.'],
+['2026','Nueva era','Con el nuevo reglamento vuelve al número 3, su favorito de siempre. Su última victoria hasta ahora llegó en el GP de Singapur.']
+];
+const chips=document.getElementById('chips'),detalle=document.getElementById('detalle');
+function showYear(i){[...chips.children].forEach((c,j)=>{c.classList.toggle('on',j===i);c.setAttribute('aria-selected',String(j===i))});const[y,t,d]=years[i];detalle.innerHTML='';const tag=document.createElement('div');tag.className='tag';tag.textContent=y;const h=document.createElement('h3');h.textContent=t;const p=document.createElement('p');p.textContent=d;detalle.append(tag,h,p)}
+years.forEach((y,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=y[0];b.setAttribute('role','tab');b.addEventListener('click',()=>showYear(i));chips.appendChild(b)});
+showYear(2);
+
+// Quiz
+const questions=[
+{q:'¿En qué año ganó su primer título mundial?',a:['2019','2021','2022','2024'],c:1,why:'Ganó su primer título en 2021, tras un final ajustado con Hamilton en Abu Dhabi.'},
+{q:'¿Con qué número corre en 2026?',a:['1','33','3','7'],c:2,why:'Vuelve al 3, su número favorito, después de usar el 33 y el 1.'},
+{q:'¿Cuántas victorias logró en 2023?',a:['15','17','19','21'],c:2,why:'Ganó 19 de las 22 carreras de la temporada.'},
+{q:'¿Con qué equipo debutó en la F1?',a:['Red Bull Racing','Toro Rosso','Ferrari','Mercedes'],c:1,why:'Debutó con Toro Rosso en 2015, con 17 años.'},
+{q:'¿En qué ciudad nació?',a:['Ámsterdam','Róterdam','Hasselt','Mónaco'],c:2,why:'Nació en Hasselt, Bélgica, aunque compite con bandera de Países Bajos.'}
+];
+let qi=0,score=0,locked=false;
+const qEl=document.getElementById('question'),aEl=document.getElementById('answers'),fb=document.getElementById('feedback'),nextBtn=document.getElementById('nextBtn'),sc=document.getElementById('scoreText');
+function render(){
+locked=false;const q=questions[qi];
+document.getElementById('qCount').textContent=`PREGUNTA ${qi+1} DE ${questions.length}`;
+document.getElementById('progressBar').style.width=`${qi/questions.length*100}%`;
+qEl.textContent=q.q;aEl.innerHTML='';fb.textContent='';nextBtn.classList.add('hidden');sc.textContent=`Puntos: ${score}`;
+q.a.forEach((t,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+t;b.addEventListener('click',()=>pick(i,b));aEl.appendChild(b)})
+}
+function pick(i,btn){
+if(locked)return;locked=true;const q=questions[qi];
+[...aEl.children].forEach((b,j)=>{b.disabled=true;if(j===q.c)b.classList.add('correct')});
+if(i===q.c){score+=100;fb.textContent='¡Correcto! '+q.why}else{btn.classList.add('wrong');fb.textContent='No exactamente. '+q.why}
+document.getElementById('progressBar').style.width=`${(qi+1)/questions.length*100}%`;
+sc.textContent=`Puntos: ${score}`+(qi===questions.length-1?(score===500?' · ¡Pole position!':' · ¡Buen intento!'):'');
+nextBtn.textContent=qi===questions.length-1?'Reiniciar ↻':'Siguiente →';nextBtn.classList.remove('hidden')
+}
+nextBtn.addEventListener('click',()=>{if(qi<questions.length-1){qi++}else{qi=0;score=0}render()});
+render();
+</script>
+</body>
+</html>
