@@ -7,43 +7,95 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/jpeg" href="imagenes2/bl.jpg">
+    <style>
+        /* Imágenes panorámicas tipo banner, adaptables a móvil y escritorio */
+        .galeria-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: min(100% - 2rem, 1100px);
+            margin: 1.5rem auto;
+        }
+
+        .img-proyecto {
+            display: block;
+            width: 100%;
+            height: clamp(150px, 28vw, 340px);
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+        /* Video más compacto y adaptable */
+        .video-contenedor {
+            width: min(100% - 2rem, 720px);
+            aspect-ratio: 16 / 9;
+            margin: 1.5rem auto;
+        }
+
+        .video-contenedor iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .galeria-vertical {
+                width: calc(100% - 1.25rem);
+                gap: 0.75rem;
+            }
+
+            .img-proyecto {
+                height: 180px;
+                border-radius: 7px;
+            }
+
+            .video-contenedor {
+                width: calc(100% - 1.25rem);
+                max-width: 480px;
+            }
+        }
+    </style>
 </head>
 <body>
-
 <div class="contenedor-app">
-   <header class="mi-header">
-  <div class="barra-superior">
-    <h1>Driving to F1</h1>
-    <!-- El botón del menú hamburguesa -->
-    <button id="boton-menu" class="btn-menu">☰</button>
-  </div>
-  
-  <!-- Los enlaces de navegación que inicialmente estarán ocultos -->
-  <nav id="navegacion" class="menu-oculto">
-    <a href="acción.html">✨ Interactivo</a>
-    <a href="galeria_circuitos_f1_2026.html">🖼️ Los circuitos</a>
-    <a href="parrilla_f1_2026.html">🌠​ Un poco más de la parrilla</a>
- </header>
- </nav>
-      <p><h3><b>La Formula 1: La máxima categoría del automovilismo moderno</b></h3></p>
-       <p><h5>Este deporte, iniciado en 1950 oficialmente con el gran premio de Silverstone es hoy uno de los deportes más prestigiosos del mundo, atrayendo a fans alrededor del mundo con sus rápidas carreras y reconocidos pilotos que se entregan de lleno al deporte.</h5></p>
-</div>
-<section class="seccion-media">
-  <!-- Imagen Local -->
- <center>
-     <div class="galeria-vertical">
-    <img src="HEADER.jpg" alt="Foto 1 del proyecto" class="img-proyecto">
-    <img src="HEADER2.png" alt="Foto 2 del proyecto" class="img-proyecto">
-    <img src="HEADER3.jpg" alt="Foto 3 del proyecto" class="img-proyecto">
-  </div>
- </center>
+    <header class="mi-header">
+        <div class="barra-superior">
+            <h1>Driving to F1</h1>
+            <button id="boton-menu" class="btn-menu" aria-label="Abrir menú">☰</button>
+        </div>
+        <nav id="navegacion" class="menu-oculto">
+            <a href="acción.html">✨ Interactivo</a>
+            <a href="galeria_circuitos_f1_2026.html">🖼️ Los circuitos</a>
+            <a href="parrilla_f1_2026.html">🌠 Un poco más de la parrilla</a>
+        </nav>
+    </header>
 
-  
-  <!-- Video de YouTube (Opcional) -->
-     <center>
+    <div class="intro">
+        <h3><b>La Formula 1: La máxima categoría del automovilismo moderno</b></h3>
+        <h5>Este deporte, iniciado en 1950 oficialmente con el gran premio de Silverstone es hoy uno de los deportes más prestigiosos del mundo, atrayendo a fans alrededor del mundo con sus rápidas carreras y reconocidos pilotos que se entregan de lleno al deporte.</h5>
+    </div>
+</div>
+
+<section class="seccion-media">
+    <div class="galeria-vertical">
+        <img src="HEADER.jpg" alt="Imagen panorámica de Fórmula 1" class="img-proyecto">
+        <img src="HEADER2.png" alt="Imagen panorámica de Fórmula 1" class="img-proyecto">
+        <img src="HEADER3.jpg" alt="Imagen panorámica de Fórmula 1" class="img-proyecto">
+    </div>
+
     <div class="video-contenedor">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/nAX_7owrHkM?si=KauXk3KgBUK1tZrT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   </center>
+        <iframe
+            src="https://www.youtube.com/embed/nAX_7owrHkM?si=KauXk3KgBUK1tZrT"
+            title="Video de Fórmula 1"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
     </div>
 </section>
 <script src="script.js"></script>
